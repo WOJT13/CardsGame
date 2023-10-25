@@ -27,6 +27,7 @@ public class DifficultyManager : MonoBehaviour
             icon = hardIcon, // Przypisz ikonę
             parameters = new List<Parameter>()
         };
+        hardLevel.parameters.Add(new Parameter() { name = "ParametrA", min = 1, max = 10 });
         hardLevel.parameters.Add(new Parameter() { name = "ParametrB", min = 5, max = 15 });
         hardLevel.bombCount = 5;
         difficultyLevelsList.Create(hardLevel);

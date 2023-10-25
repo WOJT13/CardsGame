@@ -20,7 +20,7 @@ public class DifficultyLevelController : MonoBehaviour
             // Tworzenie przycisku
             GameObject button = Instantiate(buttonPrefab, buttonContainer);
             button.GetComponentInChildren<TMP_Text>().text = level.name; // Ustaw nazwę na przycisku
-            //button.GetComponentInChildren<Image>().sprite = level.icon; // Ustaw ikonę na przycisku
+            button.GetComponentInChildren<Image>().sprite = level.icon; // Ustaw ikonę na przycisku
             //button.GetComponent<Button>().onClick.AddListener(() => ChooseLevel(level)); // Dodaj akcję przy kliknięciu
             //button.transform.SetParent(buttonContainer);
         }

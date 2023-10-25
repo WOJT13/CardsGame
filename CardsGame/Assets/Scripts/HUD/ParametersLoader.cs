@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
+using TMPro;
 public class ParametersLoader : MonoBehaviour
 {
-    public GameObject parameterPrefab;
+    public Transform parameterPrefab;
     public Transform container;
     void Start()
     {
-        //CreateParameters();
+        CreateParameters();
     }
 
     // Update is called once per frame
@@ -14,13 +15,17 @@ public class ParametersLoader : MonoBehaviour
         
     }
 
-    /*void CreateParameters()
+    void CreateParameters()
     {
         foreach(var parameter in DataManager.Instance.difficultyLevel.parameters)
         {
-            GameObject parameterObject = Instantiate(parameterPrefab, container);
-            parameterObject.GetComponentInChildren<TMP_Text>().text
+            Transform parameterObject = Instantiate(parameterPrefab, container);
+
+            parameterObject.Find("nameText").GetComponent<TMP_Text>().text = parameter.name;
+            parameterObject.Find("minmaxText").GetComponent<TMP_Text>().text = $"{parameter.min} - {parameter.max}";
+            parameterObject.Find("scoreText").GetComponent<TMP_Text>().text = "0";
+            parameterObject.Find("infoText").GetComponent<TMP_Text>().text = "Wszytsko jest super";
         }
 
-    }*/
+    }
 }
