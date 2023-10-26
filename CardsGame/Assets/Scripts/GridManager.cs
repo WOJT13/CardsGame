@@ -9,10 +9,10 @@ public class GridManager : MonoBehaviour
     [SerializeField]
     private int rowLength;
 
-    [SerializeField]
-    private int x_Space;
-    [SerializeField]
-    private int z_Space;
+    
+    public int x_Space;
+   
+    public int z_Space;
 
     [SerializeField]
     private GameObject prefab;
@@ -22,7 +22,9 @@ public class GridManager : MonoBehaviour
 
     public bool gridIsCreated;
 
-    void Update()
+
+
+    void Start()
     {
         if(gridIsCreated == false)
         {
@@ -31,8 +33,8 @@ public class GridManager : MonoBehaviour
                 for(int j = 0; j < rowLength; j++)
                 {
                     Instantiate(prefab, new Vector3(x_Space*i,0,j*z_Space), Quaternion.identity);
-                    Vector3 buildingPosition = new Vector3(i * x_Space, 0, j * z_Space);
-                    Instantiate(building, buildingPosition, Quaternion.identity);
+                    //Vector3 buildingPosition = new Vector3(1 * x_Space, 0, 0 * z_Space);
+                    //Instantiate(building, buildingPosition, Quaternion.identity);
                 }
             }
             gridIsCreated = true;
